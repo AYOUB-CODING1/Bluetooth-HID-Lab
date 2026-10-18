@@ -4,11 +4,12 @@
 > **real Bluetooth keyboard and consumer-control remote**, then send keystrokes,
 > media keys and text to it — used to study how the HID profile, BlueZ's SDP
 > registration, and an Android HID host really behave.
-![Uploading Screenshot From 2026-10-18 11-44-02.png…]()
 
 
 [![tests: offline](https://img.shields.io/badge/tests-offline-brightgreen.svg)](tests/test_offline.py)
 ![platform: linux](https://img.shields.io/badge/platform-linux-lightgrey.svg)
+
+<img width="1680" height="1050" alt="Screenshot From 2026-10-18 11-44-02" src="https://github.com/user-attachments/assets/c6bc0fca-ec03-485f-b20c-4c63ba9d98d5" />
 
 **Authorized/educational use only. See [Legal and ethical use](#3-legal-and-ethical-use).**
 
