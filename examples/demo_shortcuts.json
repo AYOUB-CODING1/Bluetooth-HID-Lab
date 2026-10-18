@@ -1,0 +1,122 @@
+[
+  {
+    "id": "demo-type-text",
+    "os": "cross",
+    "name": "Type a short literal string",
+    "keys": "hello",
+    "severity": "info",
+    "impact": "Types text into whatever input field is focused. Harmless on your own device.",
+    "notes": "Demonstrates the keyboard report path (Report ID 1). Change the string to anything you like.",
+    "source": "HID Usage Page 0x07 (Keyboard/Keypad). See USB HID Usage Tables 1.12.",
+    "tags": ["demo", "keyboard", "typing"],
+    "action": ["type Hello from the Bluetooth HID keyboard lab"]
+  },
+  {
+    "id": "demo-consumer-home",
+    "os": "android",
+    "name": "Home key (Consumer Control)",
+    "keys": "consumer 0x0223",
+    "severity": "info",
+    "impact": "Sends the consumer 'Home' usage. Android returns to the launcher.",
+    "notes": "Uses Report ID 2 (Consumer Control). Whether the OS acts on it is up to the OS.",
+    "source": "HID Usage Page 0x0C, usage 0x0223 (AC Home).",
+    "tags": ["demo", "consumer", "navigation"],
+    "action": ["consumer 0x0223"]
+  },
+  {
+    "id": "demo-consumer-back",
+    "os": "android",
+    "name": "Back key (Consumer Control)",
+    "keys": "consumer 0x0224",
+    "severity": "info",
+    "impact": "Sends the consumer 'Back' usage.",
+    "notes": "Report ID 2. Device support varies.",
+    "source": "HID Usage Page 0x0C, usage 0x0224 (AC Back).",
+    "tags": ["demo", "consumer", "navigation"],
+    "action": ["consumer 0x0224"]
+  },
+  {
+    "id": "demo-media-play-pause",
+    "os": "cross",
+    "name": "Media play/pause",
+    "keys": "media play",
+    "severity": "info",
+    "impact": "Toggles media playback on the target.",
+    "notes": "Report ID 2 consumer usage 0x00CD.",
+    "source": "HID Usage Page 0x0C, usage 0x00CD (Play/Pause).",
+    "tags": ["demo", "media"],
+    "action": ["media play"]
+  },
+  {
+    "id": "demo-media-next",
+    "os": "cross",
+    "name": "Next track",
+    "keys": "media next",
+    "severity": "info",
+    "impact": "Skips to the next media item.",
+    "notes": "Report ID 2.",
+    "source": "HID Usage Page 0x0C, usage 0x00B5 (Scan Next Track).",
+    "tags": ["demo", "media"],
+    "action": ["media next"]
+  },
+  {
+    "id": "demo-media-volup",
+    "os": "cross",
+    "name": "Volume up",
+    "keys": "media volup",
+    "severity": "info",
+    "impact": "Increases the target volume.",
+    "notes": "Report ID 2.",
+    "source": "HID Usage Page 0x0C, usage 0x00E9 (Volume Increment).",
+    "tags": ["demo", "media"],
+    "action": ["media volup"]
+  },
+  {
+    "id": "demo-open-test-page",
+    "os": "cross",
+    "name": "Open the local demo page",
+    "keys": "ctrl+l, url, enter",
+    "severity": "info",
+    "impact": "Focuses the browser address bar and navigates to a page you serve locally.",
+    "notes": "Serve examples/demo_page first: python3 -m http.server 8000 --directory examples/demo_page. Nothing is fetched from the internet.",
+    "source": "Browser convention (Ctrl+L focuses the address bar) + Report ID 1 typing.",
+    "tags": ["demo", "browser", "local"],
+    "action": ["combo ctrl+l", "delay 0.6", "type http://127.0.0.1:8000/", "key enter"]
+  },
+  {
+    "id": "demo-browser-new-tab",
+    "os": "browser",
+    "name": "New browser tab",
+    "keys": "ctrl+t",
+    "severity": "info",
+    "impact": "Opens a new tab in the focused browser.",
+    "notes": "Works on desktop browsers. Some platforms use a different shortcut.",
+    "source": "Common desktop browser convention.",
+    "tags": ["demo", "browser"],
+    "action": ["combo ctrl+t"]
+  },
+  {
+    "id": "demo-text-select-all",
+    "os": "cross",
+    "name": "Select all text",
+    "keys": "ctrl+a",
+    "severity": "info",
+    "impact": "Selects all text in the focused field or document.",
+    "notes": "Standard keyboard shortcut.",
+    "source": "Platform convention.",
+    "tags": ["demo", "editing"],
+    "action": ["combo ctrl+a"]
+  },
+  {
+    "id": "demo-linux-terminal",
+    "os": "linux",
+    "name": "Open the desktop terminal (Linux)",
+    "keys": "ctrl+alt+t",
+    "severity": "low",
+    "impact": "Opens a terminal on many Linux desktops. Only run this on a machine you own.",
+    "notes": "Shortcut depends on the desktop environment; not all have one.",
+    "source": "Common GNOME/XFCE/KDE convention.",
+    "tags": ["demo", "linux"],
+    "action": ["combo ctrl+alt+t"]
+  }
+]

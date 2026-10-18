@@ -1,0 +1,16 @@
+# Python dependencies for the Bluetooth HID lab.
+#
+# On Debian / Kali / Ubuntu, install these as system packages — PyGObject and
+# dbus-python build most reliably that way and match the system BlueZ:
+#
+#     sudo apt install -y python3-dbus python3-gi
+#
+# pip is supported as a fallback (PyGObject may need build headers:
+# `sudo apt install -y python3-dev libgirepository1.0-dev libcairo2-dev`).
+#
+# Used by:
+#   dbus-python  -> src/hid_daemon.py, src/register_hid_sdp.py
+#   PyGObject    -> src/hid_daemon.py (GLib main loop)
+#
+dbus-python>=1.2 ; python_version >= "3.8"
+PyGObject>=3.42 ; python_version >= "3.8"
